@@ -4,16 +4,15 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
-        while (head!=None and head.val==val):
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]: 
+        while head!=None and head.val==val:
             head=head.next
-        
-        curr=head
-        while (curr!=None and curr.next!=None):
-            if curr.next.val==val:
-                curr.next=curr.next.next
+        temp=head
+        while temp!=None and temp.next!=None:
+            if temp.next.val==val:
+                temp.next=temp.next.next
             else:
-                curr=curr.next
+                temp=temp.next
+        return head     
             
-        return head
         
